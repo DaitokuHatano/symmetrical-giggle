@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bayesNet>
+  <bnVariables>
+    <discreteVariable name="male" index="0" x="150" y="90">
+      <category name="0" index="0"/>
+      <category name="1" index="1"/>
+    </discreteVariable>
+    <discreteVariable name="married" index="1" x="238" y="99">
+      <category name="0" index="0"/>
+      <category name="1" index="1"/>
+    </discreteVariable>
+    <discreteVariable name="higher_edu" index="2" x="75" y="255">
+      <category name="0" index="0"/>
+      <category name="1" index="1"/>
+    </discreteVariable>
+    <discreteVariable name="gov_jobs" index="3" x="328" y="265">
+      <category name="0" index="0"/>
+      <category name="1" index="1"/>
+    </discreteVariable>
+    <discreteVariable name="age" index="4" x="165" y="330">
+      <category name="0" index="0"/>
+      <category name="1" index="1"/>
+    </discreteVariable>
+    <discreteVariable name="native_country" index="4" x="165" y="330">
+      <category name="0" index="0"/>
+      <category name="1" index="1"/>
+    </discreteVariable>
+    <discreteVariable name="high_income" index="5" x="148" y="431">
+      <category name="0" index="0"/>
+      <category name="1" index="1"/>
+    </discreteVariable>
+  </bnVariables>
+  <parents>
+    <parentsFor name="age"/>
+    <parentsFor name="male"/>
+    <parentsFor name="native_country"/>
+    <parentsFor name="married">
+      <parent name="age" index="0"/>
+      <parent name="native_country" index="1"/>
+      <parent name="male" index="2"/>
+    </parentsFor>
+    <parentsFor name="higher_edu">
+      <parent name="age" index="0"/>
+      <parent name="native_country" index="1"/>
+      <parent name="male" index="2"/>
+      <parent name="married" index="3"/>
+    </parentsFor>
+    <parentsFor name="gov_jobs">
+        <parent name="age" index="0"/>
+        <parent name="native_country" index="1"/>
+        <parent name="male" index="2"/>
+        <parent name="married" index="3"/>
+        <parent name="higher_edu" index="4"/>
+    </parentsFor>
+    <parentsFor name="high_income">
+      <parent name="age" index="0"/>
+      <parent name="native_country" index="1"/>
+      <parent name="male" index="2"/>
+      <parent name="married" index="3"/>
+      <parent name="higher_edu" index="4"/>
+      <parent name="gov_jobs" index="5"/>
+    </parentsFor>
+  </parents>
+</bayesNet>
